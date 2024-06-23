@@ -24,7 +24,7 @@ int32_t calcseed(const int32_t input, const int32_t mult, const int32_t array[])
  return seed;
 }
 
-int64_t pwr(const uint64_t num, const int e) {
+uint64_t pwr(const uint64_t num, const int e) {
  uint64_t n = 1;
  for(int i = 0; i < e; i++) n *= num;
  return n;
