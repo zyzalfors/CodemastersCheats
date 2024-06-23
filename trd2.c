@@ -40,7 +40,7 @@ char* gencodeps2(const int32_t accesscode, const int32_t cheatid) {
   loopctr >>= 1;
  }
  val1 = (val1 ^ 0xFA47D181) % 0x309F1020EF;
- uint64_t seed = (val1 ^ ((val1 ^ (val1 >> 0x08) ^ (val1 >> 0x10) ^ (val1 >> 0x18) ^ (val1 >> 0x20) ^ (val1 >> 0x28) ^ (val1 >> 0x30) ^ (val1 >> 0x38)) << 0x21)) & 0x1FFFFFFFFFF;
+ const uint64_t seed = (val1 ^ ((val1 ^ (val1 >> 0x08) ^ (val1 >> 0x10) ^ (val1 >> 0x18) ^ (val1 >> 0x20) ^ (val1 >> 0x28) ^ (val1 >> 0x30) ^ (val1 >> 0x38)) << 0x21)) & 0x1FFFFFFFFFF;
  static char code[9];
  for(int i = 0; i < 8; i++) code[i] = 0x41 + ((seed / pwr(0x1A, i)) % 0x1A);
  code[8] = '\0';
